@@ -1,16 +1,18 @@
 'use strict';
 
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Text} from 'react-native';
+import {BgComponent} from '../common';
+import SharedStyles from '../../js/styles/SharedStyles';
 
 export default class extends React.Component {
     render() {
         return (
-            <View>
+            <BgComponent>
                 <Text>
                     Home Screen
                 </Text>
-            </View>
+            </BgComponent>
         )
     }
 }

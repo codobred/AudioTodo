@@ -15,6 +15,10 @@ export default class extends React.Component {
 
         if ('android' === Platform.OS) {
             StatusBar.setTranslucent(true);
+            StatusBar.setBarStyle('light-content');
+            StatusBar.setBackgroundColor('#C644FC');
+        } else if ('ios' === Platform.OS) {
+            StatusBar.setBarStyle('light-content');
         }
     }
 
