@@ -13,13 +13,16 @@ export default class extends React.Component {
     constructor(props) {
         super(props);
 
-        if ('android' === Platform.OS) {
-            StatusBar.setTranslucent(true);
-            StatusBar.setBarStyle('light-content');
-            StatusBar.setBackgroundColor('#C644FC');
-        } else if ('ios' === Platform.OS) {
-            StatusBar.setBarStyle('light-content');
-        }
+        (Platform.select({
+            ios: () => {
+                StatusBar.setBarStyle('light-content');
+            },
+            android: () => {
+                StatusBar.setTranslucent(true);
+                StatusBar.setBarStyle('light-content');
+                StatusBar.setBackgroundColor('#C644FC');
+            },
+        }))();
     }
 
     render() {
