@@ -10,9 +10,7 @@ export default () => {
     return (
         <Router>
             <Lightbox>
-                <Scene key={'root'} hideNavBar sceneStyle={{
-                    backgroundColor: 'red'
-                }}>
+                <Scene key={'root'} hideNavBar>
                     <Scene key={'Home'} initial={true} component={HomeScreen} />
                 </Scene>
             </Lightbox>

@@ -14,3 +14,34 @@ export function create(styles: Object): {[name: string]: number} {
     });
     return StyleSheet.create(platformStyles);
 }
+
+export function fontManager(weight) {
+    const styles = {
+        thin: {
+            ios: {
+                fontFamily: 'Helvetica Neue',
+                fontWeight: '100',
+            },
+            android: {
+                fontFamily: 'san-serif',
+                fontWeight: '100',
+            }
+        },
+        light: {
+            ios: {
+                fontFamily: 'Helvetica Neue',
+                fontWeight: '300',
+            },
+            android: {
+                fontFamily: 'san-serif',
+                fontWeight: '300',
+            }
+        }
+    };
+
+    if (!styles.hasOwnProperty(weight)) {
+        throw new Error('Undefined font weight: ', weight);
+    }
+
+    return styles[weight];
+}
